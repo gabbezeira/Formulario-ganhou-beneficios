@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import emailjs from 'emailjs-com'
 import { ArrowUpRight } from 'lucide-react'
 import React, { useState } from 'react'
@@ -215,6 +216,7 @@ function App() {
 					</p>
 				</Modal>
 			)}
+			<Analytics />
 		</Container>
 	)
 }
