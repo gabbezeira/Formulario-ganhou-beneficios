@@ -19,7 +19,7 @@ export const Container = styled.div`
 
   @media(max-width: 768px){
     height: auto;
-    padding: 3.75rem 1.25rem;
+    padding: 2.75rem 1.25rem;
   }
 `
 
