@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import bgImage from '../assets/bg.jpg'
+import bgImage from '../assets/bg.webp'
 import './globalStyles.css'
 
 export const Container = styled.div`
