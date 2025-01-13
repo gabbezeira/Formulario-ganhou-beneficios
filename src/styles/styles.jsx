@@ -217,7 +217,7 @@ export const Form = styled.form`
       font-weight: bold;
     }
 
-    input {
+    .input {
       width: 100%;
       height: 3.125rem;
       padding: 0.625rem 1.25rem;

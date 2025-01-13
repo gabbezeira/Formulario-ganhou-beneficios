@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react'
 import emailjs from 'emailjs-com'
 import { ArrowUpRight } from 'lucide-react'
 import React, { useState } from 'react'
+import InputMask from 'react-input-mask'
 import SendSuccess from './assets/email.svg'
 import SendError from './assets/error.svg'
 import Logo from './assets/logo.svg'
@@ -43,6 +44,19 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+
+		if (
+			!formData.nome.trim() ||
+			!formData.idade.trim() ||
+			formData.horario.length === 0 ||
+			formData.necessidade.length === 0 ||
+			!formData.whatsapp.trim() ||
+			!/^\(\d{2}\) 9 \d{4}-\d{4}$/.test(formData.whatsapp)
+		) {
+			setStatusMessage('alldata')
+			setIsModalOpen(true)
+			return
+		}
 
 		setIsLoading(true)
 
@@ -93,7 +107,12 @@ function App() {
 						Responda este breve questionário e um de nossos parceiros entrará em
 						contato para agendar seu exame gratuitamente!
 					</p>
-					<a href="#" className="button">
+					<a
+						href="https://wa.me/5534997330203?text=Ol%C3%A1%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20campanha%20de%20exame%20de%20vista%20gratuito!"
+						target="_blank"
+						className="button"
+						rel="noreferrer"
+					>
 						Saiba mais sobre a campanha
 						<ArrowUpRight />
 					</a>
@@ -175,13 +194,17 @@ function App() {
 						<p className="label">
 							Seu Whatsapp para contato e envio da confirmação:
 						</p>
-						<input
-							type="number"
+						<InputMask
+							className="input"
+							mask="(99) 9 9999-9999"
 							placeholder="Seu número do whatsapp"
 							name="whatsapp"
 							onChange={handleInputChange}
+							value={formData.whatsapp}
 							required
-						/>
+						>
+							{(inputProps) => <input {...inputProps} type="text" />}
+						</InputMask>
 					</div>
 
 					<button type="submit" disabled={isLoading}>
@@ -214,6 +237,17 @@ function App() {
 						Ocorreu um erro ao tentar enviar sua mensagem. Por favor, tente
 						novamente.
 					</p>
+				</Modal>
+			)}
+
+			{isModalOpen && statusMessage === 'alldata' && (
+				<Modal onClose={handleCloseModal}>
+					<img
+						src={SendError}
+						className="image"
+						alt="imagem de erro ao enviar email"
+					/>
+					<p>Preencha todos os campos do formulário corretamente!</p>
 				</Modal>
 			)}
 			<Analytics />
