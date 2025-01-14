@@ -98,8 +98,7 @@ function App() {
 					/>
 					<div className="title">
 						<h1 className="text">
-							Cuide da saúde de seus olhos, Ganhe um exame de vista gratuito em
-							Patos de Minas!
+							Ganhe um exame de vista gratuito em Patos de Minas!
 						</h1>
 						<span className="warning">*consulte as condições</span>
 					</div>

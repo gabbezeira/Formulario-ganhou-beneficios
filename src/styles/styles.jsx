@@ -39,7 +39,7 @@ export const Content = styled.div`
   .left {
     display: flex;
     align-items: start;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     gap: 2rem;
 
@@ -52,10 +52,13 @@ export const Content = styled.div`
     }
 
     .title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
       width: 100%;
 
       .text {
-        font-size: 1.875rem;
+        font-size: 1.75rem;
         font-weight: bold;
         color: var(--white);
       }
@@ -67,7 +70,7 @@ export const Content = styled.div`
     }
 
     .description {
-      font-size: 1.25rem;
+      font-size: 18px;
       color: var(--white);
     }
 
