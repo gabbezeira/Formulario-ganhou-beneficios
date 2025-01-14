@@ -99,7 +99,7 @@ export const Content = styled.div`
 
   @media(min-width: 1280px){
     justify-content: center;
-    gap: 8.125rem;
+    gap: 10rem;
   }
 
   @media(max-width: 1280px){
