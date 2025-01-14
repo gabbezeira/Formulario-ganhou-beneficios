@@ -19,7 +19,7 @@ function App() {
 	const [formData, setFormData] = useState({
 		nome: '',
 		idade: '',
-		horario: [],
+		//horario: [],
 		necessidade: [],
 		whatsapp: '',
 	})
@@ -48,7 +48,7 @@ function App() {
 		if (
 			!formData.nome.trim() ||
 			!formData.idade.trim() ||
-			formData.horario.length === 0 ||
+			//formData.horario.length === 0 ||
 			formData.necessidade.length === 0 ||
 			!formData.whatsapp.trim() ||
 			!/^\(\d{2}\) 9 \d{4}-\d{4}$/.test(formData.whatsapp)
@@ -67,7 +67,7 @@ function App() {
 				{
 					nome: formData.nome,
 					idade: formData.idade,
-					horario: formData.horario.join(', '),
+					//horario: formData.horario.join(', '),
 					necessidade: formData.necessidade.join(', '),
 					whatsapp: formData.whatsapp,
 				},
@@ -137,7 +137,7 @@ function App() {
 						/>
 					</div>
 
-					<div className="one">
+					{/* <div className="one">
 						<p className="label">
 							Escolha abaixo o <span>Melhor Horário</span> para o seu
 							atendimento:
@@ -164,7 +164,7 @@ function App() {
 								</div>
 							))}
 						</div>
-					</div>
+					</div> */}
 
 					<div className="two">
 						<p className="label">Qual a sua maior necessidade no momento?</p>

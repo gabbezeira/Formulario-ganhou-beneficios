@@ -19,7 +19,11 @@ export const Container = styled.div`
 
   @media(max-width: 768px){
     height: auto;
-    padding: 2.75rem 1.25rem;
+    padding: 2.75rem 3.25rem;
+  }
+
+  @media(min-width: 1280px){
+    padding: auto;
   }
 `
 
@@ -90,6 +94,15 @@ export const Content = styled.div`
     }
   }
 
+  @media(min-width: 1280px){
+    justify-content: center;
+    gap: 8.125rem;
+  }
+
+  @media(max-width: 1280px){
+    justify-content: space-between;
+  }
+
   @media(max-width: 768px){
     flex-direction: column;
     gap: 3.25rem;
@@ -108,7 +121,7 @@ export const Form = styled.form`
   gap: 1.75rem;
 
   width: 31.25rem;
-  height: auto;
+  height: 100%;
   padding: 2rem 1.5rem;
 
   background-color: var(--gray-white);
